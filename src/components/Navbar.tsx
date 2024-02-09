@@ -8,27 +8,27 @@ const Nav = styled.nav`
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  outline: 1px solid blue;
+  
 `;
 const NavLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 3em;
-  outline: 1px solid blue;
+  
 `;
 const NavLink = styled.a<{ active: boolean }>`
   font-size: 18px;
   color: ${(props) => (props.active ? "#333333" : "#767676")};
   font-weight: 500;
   cursor: pointer;
-  outline: 1px solid blue;
+  
 `;
 
 const Logo = styled.h2`
   font-size: 24px;
   color: #333333;
-  outline: 1px solid blue;
+  
 `;
 
 function Navbar() {

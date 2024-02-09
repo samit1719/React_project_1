@@ -1,5 +1,8 @@
 import styled from "styled-components";
 import DownloadBtn from "./DownloadBtn";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faComment } from "@fortawesome/free-regular-svg-icons";
+import { faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
 
 const FooterContainer = styled.footer`
   width: inherit;
@@ -11,7 +14,7 @@ const FooterContainer = styled.footer`
   left: 0;
   right: 0;
   top: 100%;
-  outline: 1px solid blue;
+  
 `;
 
 const CallToAction = styled.div`
@@ -21,7 +24,7 @@ const CallToAction = styled.div`
   justify-content: center;
   text-align: center;
   margin-bottom: 3em;
-  outline: 1px solid blue;
+  
 `;
 
 const CallToActionText = styled.h1`
@@ -29,14 +32,14 @@ const CallToActionText = styled.h1`
   font-weight: 900;
   width: 70%;
   color: #333333;
-  outline: 1px solid blue;
+  
 `;
 
 const Hr = styled.hr`
   width: 70%;
   height: 1px;
   background-color: #767676;
-  outline: 1px solid blue;
+  
 `;
 // *************************************************************
 const FooterBottom = styled.div`
@@ -44,15 +47,15 @@ const FooterBottom = styled.div`
   align-items: center;
   justify-content: space-between;
   // gap:5em;
-  width: 100%;
-  outline: 1px solid blue;
+  width: 60%;
+  
 `;
 
 const FooterColumnHeader = styled.h3`
   font-size: 1.5em;
   font-weight: 700;
   color: #333333;
-  outline: 1px solid blue;
+  
 `;
 
 const FooterColumn = styled.div`
@@ -60,7 +63,7 @@ const FooterColumn = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 2em;
-  outline: 1px solid blue;
+  
 `;
 
 const FooterColumnLink = styled.div`
@@ -73,14 +76,14 @@ const SocialMediaLinks = styled.div`
   gap: 2em;
   align-items: center;
   justify-content: center;
-  outline: 1px solid blue;
+  
 `;
 const SocialMediaLink = styled.a`
   border-radius: 100%;
   background-color: #04ddb2;
   color: #fff;
   cursor: pointer;
-  outline: 1px solid blue;
+  
 `;
 
 const Footer = () => {
@@ -105,10 +108,21 @@ const Footer = () => {
       <Hr />
       <FooterBottom>
         <FooterColumn>
-          <FooterColumnHeader>Lobe </FooterColumnHeader>
-          <p>A product by Microsoft.</p>
-          <p>All rights reserved.</p>
-          <p>© Microsoft 2021</p>
+          <FooterColumnHeader style={{marginBottom: '-0.3em'}}>Lobe </FooterColumnHeader>
+          <p>
+            A product by Microsoft.
+            <br />
+            <br />
+            All rights reserved.
+            <br />
+            <br />
+            © Microsoft 2021
+            <br />
+            <br />
+            <br />
+            <br />
+          </p>
+          
         </FooterColumn>
         {columnData.map((column, idx: number) => {
           return (
