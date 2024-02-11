@@ -10,7 +10,7 @@ const Button = styled.button`
   height: 3em;
   padding: 0 1.5em;
   cursor: pointer;
- 
+  font-size: 1.2em;
 `;
 const DownloadBtn = () => {
   return (

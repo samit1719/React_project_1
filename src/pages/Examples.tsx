@@ -1,8 +1,8 @@
-import React from 'react'
+import Layout from '../components/Layout'
 
 const Examples = () => {
   return (
-    <div>Examples</div>
+    <Layout>Examples</Layout>
   )
 }
 

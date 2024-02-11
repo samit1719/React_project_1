@@ -1,8 +1,8 @@
-import React from 'react'
+import Layout from '../components/Layout'
 
 const Overview = () => {
   return (
-    <div>Overview</div>
+    <Layout>Overview</Layout>
   )
 }
 

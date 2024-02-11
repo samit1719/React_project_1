@@ -1,6 +1,7 @@
-import { useState } from "react";
+
 import styled from "styled-components";
 import DownloadBtn from "./DownloadBtn";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Nav = styled.nav`
   display: flex;
@@ -8,6 +9,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
+  margin-left: 9em;
   
 `;
 const NavLinks = styled.div`
@@ -32,18 +34,21 @@ const Logo = styled.h2`
 `;
 
 function Navbar() {
-  const [activeLink, setActiveLink] = useState("Tour");
+  const location = useLocation();
+  const navigate = useNavigate();
+  const activeLink = location.pathname.slice(1);
   const linkTitles = ["Overview", "Examples", "Tour", "Blog", "Help"];
   return (
     <Nav>
       <Logo>Logo</Logo>
       <NavLinks>
+
         {linkTitles.map((title: string, idx: number) => {
           return (
             <NavLink
               key={idx}
-              active={title === activeLink}
-              onClick={() => setActiveLink(title)}
+              active={title.toLowerCase() === activeLink}
+              onClick={() => navigate(`/${title.toLowerCase()}`)}
             >
               {title}
             </NavLink>

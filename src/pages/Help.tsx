@@ -1,8 +1,8 @@
-import React from 'react'
+import Layout from '../components/Layout'
 
 const Help = () => {
   return (
-    <div>Help</div>
+    <Layout>Help</Layout>
   )
 }
 
