@@ -18,14 +18,14 @@ const InnerLayoutContainer = styled.div`
 `;
 function Layout(props: { children: React.ReactNode }) {
   const location = useLocation();
-  const currentRoute: any = location.pathname.slice(1);
+  const currentRoute: any = location.pathname;
   const { children } = props;
   return (
     <LayoutContainer>
       <Navbar />
-      {(currentRoute !== "" ||
-        currentRoute !== "help" ||
-        currentRoute !== "overview") && <Hero />}
+      {(currentRoute !== "/" &&
+        currentRoute !== "/help" &&
+        currentRoute !== "/overview") && <Hero />}
       <InnerLayoutContainer>
         {children}
         <Footer />

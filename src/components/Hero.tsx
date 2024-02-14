@@ -32,7 +32,7 @@ const Hero = () => {
   const location = useLocation();
   const currentRoute = location.pathname.slice(1);
 
-  
+  if (!currentRoute) return null;
 
   return (
     <HeroContainer>
