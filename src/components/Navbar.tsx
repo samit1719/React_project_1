@@ -9,7 +9,7 @@ const Nav = styled.nav`
   justify-content: space-between;
   width: 90%;
   margin: 0 auto;
-  margin-left: 9em;
+  // margin-left: 9em;
   
 `;
 const NavLinks = styled.div`
@@ -17,6 +17,7 @@ const NavLinks = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 3em;
+  margin-left: 5em;
   
 `;
 const NavLink = styled.a<{ active: boolean }>`

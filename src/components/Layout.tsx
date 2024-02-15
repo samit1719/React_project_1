@@ -14,7 +14,7 @@ const LayoutContainer = styled.div`
 `;
 
 const InnerLayoutContainer = styled.div`
-  max-width: 70%;
+  max-width: 100%;
 `;
 function Layout(props: { children: React.ReactNode }) {
   const location = useLocation();

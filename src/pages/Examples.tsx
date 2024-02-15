@@ -48,6 +48,12 @@ const Examples = () => {
       subTitle:
         "Train your app to respond with sounds and stories while kids draw to create engaging learning experiences.",
     },
+    {
+      videoUrl: "https://www.lobe.ai/assets/examples/Mask%20Up.mp4",
+      title: "Safety Precautions",
+      subTitle:
+        "Train your app to monitor when masks are being correctly worn to help encourage proper safety precautions.",
+    },
   ];
 
   return (
