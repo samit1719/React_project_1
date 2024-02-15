@@ -1,0 +1,18 @@
+.ReactModal__Overlay{
+    opacity: 1;
+    transition: opacity 2000ms ease-in-out;
+    width: 100%;
+    
+    
+    display: flex;
+    justify-content: center;
+    background-color: rgba(51, 51, 51, 0.3);
+}
+
+.ReactModal__Overlay--after-open{
+    opacity: 1;
+}
+
+.ReactModal__Overlay--before-close{
+    opacity: 0;
+}

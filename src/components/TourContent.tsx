@@ -15,7 +15,7 @@ const ImageContainer = styled.button`
     width: 850px;
     height: 483px;
 `;
-
+ 
 const VideoImage = styled.img`
     max-width: 100%;
     height: auto;
@@ -27,11 +27,15 @@ const VideoImage = styled.img`
     box-shadow: 1px 45px 100px 5px rgba(51, 51, 51, 0.2);
 `;
 
-const TourContent = () => {
+const TourContent = (props: {
+  modalOpen: boolean;
+  setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
+  const { modalOpen, setModalOpen } = props;
   return (
     <ImageContainer
       onClick={() => {
-        //open overlay model
+        setModalOpen(!modalOpen);
       }}
     >
       <VideoImage

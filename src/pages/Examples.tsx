@@ -1,8 +1,20 @@
 import Layout from '../components/Layout'
+import styled from 'styled-components'
+
+const ExamplesContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+`;
 
 const Examples = () => {
   return (
-    <Layout>Examples</Layout>
+    <Layout>
+      <ExamplesContainer>
+        {/* Insert your code here */}
+      </ExamplesContainer>
+    </Layout>
   )
 }
 
