@@ -3,6 +3,7 @@ import DownloadBtn from "./DownloadBtn";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faComment } from "@fortawesome/free-regular-svg-icons";
 import { faTwitter, faYoutube } from "@fortawesome/free-brands-svg-icons";
+import { useNavigate } from "react-router-dom";
 
 const FooterContainer = styled.footer`
   width: inherit;
@@ -100,6 +101,8 @@ const SocialMediaLink = styled.a`
 `;
 
 const Footer = () => {
+  const navigate = useNavigate();
+
   const columnData = [
     { title: "About", links: ["Download", "Overview", "Examples", "Blog"] },
     {
@@ -144,7 +147,14 @@ const Footer = () => {
             <FooterColumn key={idx}>
               <FooterColumnHeader>{column.title}</FooterColumnHeader>
               {column.links.map((link, idx: number) => {
-                return <FooterColumnLink key={idx}>{link}</FooterColumnLink>;
+                return (
+                  <FooterColumnLink
+                    key={idx}
+                    onClick={() => navigate(`/${link.toLowerCase()}`)}
+                  >
+                    {link}
+                  </FooterColumnLink>
+                );
               })}
             </FooterColumn>
           );

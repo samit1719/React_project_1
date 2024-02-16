@@ -3,7 +3,7 @@ import Layout from "../components/Layout";
 import TourContent from "../components/TourContent";
 import styled from "styled-components";
 import { useState } from "react";
-import "./Tour.css";
+import "./css/Tour.css"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
