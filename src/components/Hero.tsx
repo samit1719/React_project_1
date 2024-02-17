@@ -38,7 +38,9 @@ const Hero = () => {
     <HeroContainer>
       <HeroTitle>
         Lobe{" "}
-        <HeroTitleColored>{currentRoute[0].toUpperCase() + currentRoute.slice(1)}</HeroTitleColored>
+        <HeroTitleColored>
+          {currentRoute[0].toUpperCase() + currentRoute.slice(1)}
+        </HeroTitleColored>
       </HeroTitle>
       {currentRoute === "examples" && (
         <HeroBody>
@@ -58,6 +60,7 @@ const Hero = () => {
           machine learning models with Lobe.
         </HeroBody>
       )}
+    
     </HeroContainer>
   );
 };

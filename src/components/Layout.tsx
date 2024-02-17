@@ -24,7 +24,6 @@ function Layout(props: { children: React.ReactNode }) {
     <LayoutContainer>
       <Navbar />
       {(currentRoute !== "/" &&
-        currentRoute !== "/help" &&
         currentRoute !== "/overview") && <Hero />}
       <InnerLayoutContainer>
         {children}
