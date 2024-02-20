@@ -1,7 +1,9 @@
-import { useState } from "react";
-import Layout from "../components/Layout";
 import styled from "styled-components";
+import Layout from "../components/Layout";
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import { dropdownData } from "../utils/dropdown";
+import Dropdown from "../components/Dropdown";
 
 const InfoHeader = styled.p`
   font-weight: normal;
@@ -12,9 +14,9 @@ const InfoHeader = styled.p`
 `;
 
 const FAQSection = styled.div`
-  margin-top: 2em;
+  margin-top: 4em;
   display: flex;
-  gap:2em;
+  gap: 2em;
 `;
 
 const TabSectionContainer = styled.div``;
@@ -24,15 +26,14 @@ const TabSection = styled.div`
   flex-direction: column;
   width: auto;
 `;
-
-const Tab = styled.button<{ $active?: boolean }>`
+const Tab = styled.button<{ $active: boolean }>`
   background: none;
-  border: none;
   cursor: pointer;
+  border: none;
   padding: 0.5em 4em 0.5em 1em;
   color: ${(props) => (props.$active ? "white" : "inherit")};
-  background-color: ${(props) => (props.$active ? "#04DDB2" : "none")};
-  border-radius: 2.5px;
+  background-color: ${(props) => (props.$active ? "#04DDB2" : "white")};
+  border-radius: 5px;
   width: 100%;
   font-size: 1em;
   text-align: left;
@@ -40,31 +41,31 @@ const Tab = styled.button<{ $active?: boolean }>`
 
 const StyledLink = styled(Link)`
   padding: 0.5em 4em 0.5em 1em;
-  color: inherit;
   text-decoration: none;
+  color: inherit;
   cursor: pointer;
 `;
 const DropdownSectionContainer = styled.div``;
 
-
 const Help = () => {
   const [activeTab, setActiveTab] = useState("Welcome");
+
   const FAQTags = [
     "Welcome",
     "Label",
     "Train",
     "Results",
-    "play",
+    "Play",
     "Export",
-    "Imporoving",
+    "Improving",
     "Tips",
   ];
 
   const contactTags = [
-    { title: "Comunity", url: "https://aka.ms/LobeCommunity" },
+    { title: "Community", url: "https://aka.ms/LobeCommunity" },
     { title: "Lobe Tour", url: "/tour" },
     { title: "Examples", url: "/examples" },
-    { title: "Contact Us", url: "mailto:samuelteshome1719@gmail.com" },
+    { title: "Contact Us", url: "mailto:angumbao@sandtech.com" },
   ];
 
   return (
@@ -87,10 +88,43 @@ const Help = () => {
             ))}
           </TabSection>
           <TabSection>
-            {contactTags.map((contact: { title: string; url: string }, idx: number) => <StyledLink key={idx} to={contact.url}>{contact.title}</StyledLink>)}
+            {contactTags.map(
+              (
+                contact: {
+                  title: string;
+                  url: string;
+                },
+                idx: number
+              ) => (
+                <StyledLink key={idx} to={contact.url}>
+                  {contact.title}
+                </StyledLink>
+              )
+            )}
           </TabSection>
         </TabSectionContainer>
-        <DropdownSectionContainer></DropdownSectionContainer>
+        <DropdownSectionContainer>
+          {
+            //@ts-ignore
+            dropdownData[activeTab.toLowerCase()].map(
+              (
+                dropdown: {
+                  titleText: string;
+                  content: React.ReactNode;
+                },
+                idx: number
+              ) => {
+                return (
+                  <Dropdown
+                    key={idx}
+                    titleText={dropdown.titleText}
+                    content={dropdown.content}
+                  />
+                );
+              }
+            )
+          }
+        </DropdownSectionContainer>
       </FAQSection>
     </Layout>
   );
