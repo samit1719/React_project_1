@@ -12,6 +12,7 @@ const DropdownList: React.FC<DropdownListProps> = ({ list }) => {
         justifyContent: "center",
         gap: "1em",
         marginBottom: "1em",
+        // border: "1px solid #e0e0e0",
       }}
     >
       {list.map((listItem: React.ReactElement, idx: number) => {

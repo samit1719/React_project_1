@@ -35,7 +35,21 @@ const dropdownData = {
       ),
     },
   ],
-  label: [],
+  label: [
+    {
+      titleText: "What is Labeling?",
+      content: (
+        <>
+          <p>
+            Labeling is assigning categories to your images to create <b>examples </b>
+            that teach Lobe. These examples are commonly known as a <b>dataset. </b>
+            From this dataset, Lobe will learn to automatically predict a label
+            for a given image.
+          </p>
+        </>
+      ),
+    },
+  ],
   train: [],
   results: [],
   play: [],
