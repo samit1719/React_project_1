@@ -434,6 +434,53 @@ const dropdownData = {
         </>
       ),
     },
+    {
+      titleText: "Why is Lobe not predicting well on new images in Use?",
+      content: (
+        <>
+          <p>Compare the images in Use with the images in your examples:</p>
+          <DropdownList
+            list={[
+              <p>
+                Your model may have memorized your examples instead of learning
+                to generalize to new images. This is commonly called
+                overfitting. Check{" "}
+                <Link
+                  to={
+                    "https://lobe.ai/https://www.lobe.ai/docs/results/results#what-are-test-images"
+                  }
+                >
+                  Website
+                </Link>{" "}
+                to see if your model is overfitting.
+              </p>,
+              <p>
+                These new images are not represented by your examples. Try to
+                play with edge cases and ‘trick’ Lobe as much as possible. Make
+                sure your examples contain all these new variations and
+                conditions seen from Use. You can add new images as examples
+                directly from Use so that Lobe can continually improve.
+              </p>,
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      titleText:
+        "Why is there always a prediction even when nothing is in the image?",
+      content: (
+        <>
+          <p>
+            Lobe will always predict one of your labels even if your image does
+            not contain any related content. If you expect your model to see
+            these types of images, create a ‘None’ label and add variations of
+            these images as examples. You can use this ‘None’ label as a
+            placeholder when waiting for relevant predictions.
+          </p>
+        </>
+      ),
+    },
   ],
   tips: [
     {
@@ -459,6 +506,62 @@ const dropdownData = {
           />
           <p>
             Watch our <Link to={"https://aka.ms/LobeTour"}>intro tour</Link>
+          </p>
+        </>
+      ),
+    },
+    {
+      titleText: "What keyboard shortcuts are supported?",
+      content: (
+        <>
+          <p>
+            <b>Global</b>
+          </p>
+          <DropdownList
+            list={[<p>Check for updates: ctrl/cmd + shift + U</p>]}
+          />
+          <p>
+            <b>Open Screen</b>
+          </p>
+          <DropdownList
+            list={[
+              <p>New project: ctrl/cmd + N</p>,
+              <p>Close Lobe: ctrl/cmd + W</p>,
+            ]}
+          />
+          <p>
+            <b>Project Screen</b>
+          </p>
+          <DropdownList
+            list={[
+              <p>Import data: ctrl/cmd + I</p>,
+              <p>Webcam import: ctrl/cmd + shift + I</p>,
+              <p>Export model: ctrl/cmd + E</p>,
+              <p>Optimize model: ctrl/cmd + shift + O</p>,
+              <p>Switch to Label: ctrl/cmd + 1</p>,
+              <p>Switch to Train: ctrl/cmd + 2</p>,
+              <p>Switch to Play: ctrl/cmd + 3</p>,
+              <p>Project settings: ctrl/cmd + comma</p>,
+              <p>Select all data: ctrl/cmd + A</p>,
+              <p>View options: ctrl/cmd + J</p>,
+              <p>Duplicate this project: ctrl/cmd + shift + S</p>,
+              <p>
+                Close project window (go back to open screen): ctrl/cmd + W
+              </p>,
+            ]}
+          />
+        </>
+      ),
+    },
+    {
+      titleText: "Why is my computer running slowly during training?",
+      content: (
+        <>
+          <p>
+            Training is a very computation-heavy process. Lobe will use a lot of
+            memory and CPU bandwidth to train as quickly as possible. This
+            generally means your computer will have less CPU and memory
+            available for other apps to use.
           </p>
         </>
       ),
